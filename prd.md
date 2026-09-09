@@ -1,3 +1,4 @@
+[prd.md](https://github.com/user-attachments/files/31982710/prd.md)
 **지렁이 게임 웹앱 PRD (제품 요구사항 문서)**
 
 ---
