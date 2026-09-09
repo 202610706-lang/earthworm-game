@@ -1,101 +1,49 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>인터랙트(Interact) 동아리 소개</title>
-    <style>
-        body {
-            font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
-            background-color: #121212;
-            color: #e0e0e0;
-            margin: 0;
-            padding: 40px 20px;
-            display: flex;
-            justify-content: center;
-        }
-        .container {
-            max-width: 700px;
-            width: 100%;
-            background: #1e1e1e;
-            padding: 40px;
-            border-radius: 16px;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.5);
-        }
-        h1 {
-            color: #ffb703;
-            font-size: 28px;
-            margin-bottom: 10px;
-        }
-        h2 {
-            color: #219ebc;
-            font-size: 20px;
-            border-bottom: 2px solid #333;
-            padding-bottom: 8px;
-            margin-top: 30px;
-        }
-        p, li {
-            font-size: 16px;
-            line-height: 1.6;
-            color: #cfcfcf;
-        }
-        ul {
-            padding-left: 20px;
-        }
-        .highlight {
-            background-color: #332701;
-            border-left: 4px solid #ffb703;
-            padding: 15px;
-            margin: 20px 0;
-            border-radius: 4px;
-            color: #ffe6a7;
-        }
-        .btn {
-            display: block;
-            width: 100%;
-            background-color: #ffb703;
-            color: #121212;
-            text-align: center;
-            padding: 14px;
-            font-size: 18px;
-            font-weight: bold;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            margin-top: 30px;
-            text-decoration: none;
-            transition: background 0.2s;
-        }
-        .btn:hover {
-            background-color: #fb8500;
-            color: #fff;
-        }
-    </style>
-</head>
-<body>
+**지렁이 게임 웹앱 PRD (제품 요구사항 문서)**
 
-    <div class="container">
-        <h1>💡 인터랙트 (Interact)</h1>
-        <p>강당의 불을 밝히고 끄며 학교의 에너지를 책임지는, 그리고 매점을 운영하는 멋진 동아리입니다!</p>
+---
 
-        <div class="highlight">
-            <strong>✨ 우리의 모토:</strong> "우리의 손으로 학교의 빛과 에너지를 만든다!"
-        </div>
+**1. 프로젝트 개요**
 
-        <h2>🏫 동아리 소개</h2>
-        <ul>
-            <li><strong>주요 임무 1:</strong> 교내 행사 및 강당 음향·조명(불 끄기 및 컨트롤) 담당</li>
-            <li><strong>주요 임무 2:</strong> 학생 복지를 위한 교내 매점 운영 및 재고 관리</li>
-        </ul>
+* **제품명:** 클래식 & 멀티 스타일 웹 지렁이 게임 (Snake Web App)
+* **목적:** 웹 브라우저에서 별도 설치 없이 즉시 즐길 수 있는 직관적이고 중독성 있는 지렁이 게임 구현
+* **타깃 유저:** 가벼운 웹 게임을 즐기는 모든 사용자
 
-        <h2>⚡ 주요 활동</h2>
-        <ul>
-            <li><strong>무대 조명 & 음향 제어:</strong> 축제, 입학식, 졸업식 등 강당 행사 백스테이지 지원</li>
-            <li><strong>매점 관리:</strong> 쉬는 시간과 점심시간 매점 운영 및 물품 정돈</li>
-        </ul>
+---
 
-        <a href="#" class="btn" onclick="alert('인터랙트 부원 지원 감사합니다! 추후 공지를 확인해주세요.')">🚀 인터랙트 지원하기</a>
-    </div>
+**2. 핵심 게임 규칙 및 사망 조건**
 
-</body>
-</html>
+* **이동 및 성장:** 방향키 또는 마우스로 지렁이를 조작하며, 필드의 먹이를 획득할 때마다 몸길이가 늘어나고 점수가 상승함
+* **사망 조건 (Game Over):**
+* 지렁이 머리가 맵 테두리(벽)에 충돌할 경우
+* 지렁이 머리가 자신의 몸통에 충돌할 경우
+* (멀티/AI 모드 확장 시) 지렁이 머리가 다른 지렁이의 몸통에 닿을 경우
+
+
+
+---
+
+**3. 주요 기능 요구사항**
+
+| 기능 구분 | 상세 요구사항 | 우선순위 |
+| --- | --- | --- |
+| **게임 플레이** | 캔버스(Canvas) 기반의 지렁이 이동, 렌더링 및 4방향/마우스 입력 처리 | P0 (최우선) |
+| **충돌 감지 Engine** | 벽, 자가 몸통, (옵션) 타 지렁이 몸통 충돌 시 즉시 게임 오버 처리 | P0 (최우선) |
+| **먹이 생성 시스템** | 지렁이 몸통 영역을 제외한 랜덤 위치에 먹이 생성 | P0 (최우선) |
+| **스코어 보드** | 현재 점수(획득한 먹이 수) 및 최고 점수(Local Storage 저장) 표시 | P1 |
+| **게임 상태 관리** | 시작(Start), 일시정지(Pause), 재시작(Restart) UI 및 기능 | P1 |
+| **난이도 조절** | 먹이를 먹을수록 이동 속도가 단계적으로 증가하는 로직 | P2 |
+
+---
+
+**4. 화면 및 UI/UX 구성**
+
+* **메인 화면:** 게임 타이틀, '게임 시작' 버튼, 최고 점수 표시
+* **게임 화면:** 메인 게임 캔버스(Grid/Free-move), 상단 현재 점수 및 일시정지 버튼
+* **게임 오버 팝업:** 최종 점수, 최고 점수갱신 여부, '다시하기' 버튼
+
+---
+
+**5. 기술 스택 제안**
+
+* **Frontend:** HTML5 (Canvas API), CSS3, Vanilla JavaScript (또는 React / Vue.js)
+* **데이터 저장:** Browser LocalStorage (최고 점수 저장용)
