@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>인터랙트(Interact) 동아리 소개</title>
+    <!-- CSS 파일 연결 -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>💡 인터랙트 (Interact)</h1>
+        <p>강당의 불을 밝히고 끄며 학교의 에너지를 책임지는, 그리고 매점을 운영하는 멋진 동아리입니다!</p>
+
+        <div class="highlight">
+            <strong>✨ 우리의 모토:</strong> "우리의 손으로 학교의 빛과 에너지를 만든다!"
+        </div>
+
+        <h2>🏫 동아리 소개</h2>
+        <ul>
+            <li><strong>주요 임무 1:</strong> 교내 행사 및 강당 음향·조명(불 끄기 및 컨트롤) 담당</li>
+            <li><strong>주요 임무 2:</strong> 학생 복지를 위한 교내 매점 운영 및 재고 관리</li>
+        </ul>
+
+        <h2>⚡ 주요 활동</h2>
+        <ul>
+            <li><strong>무대 조명 & 음향 제어:</strong> 축제, 입학식, 졸업식 등 강당 행사 백스테이지 지원</li>
+            <li><strong>매점 관리:</strong> 쉬는 시간과 점심시간 매점 운영 및 물품 정돈</li>
+        </ul>
+
+        <!-- 💬 학생 질문/답변 섹션 -->
+        <h2>💬 궁금한 점을 물어보세요!</h2>
+        <div class="qna-box">
+            <input type="text" id="questionInput" placeholder="예: 면접 보나요?, 매점 언제 열어요? 등">
+            <button id="askBtn">질문하기</button>
+        </div>
+        <!-- 답변이 출력될 공간 -->
+        <div id="answerResult" class="answer-box" style="display: none;"></div>
+
+        <!-- 지원하기 버튼 -->
+        <button id="applyBtn" class="btn">🚀 인터랙트 지원하기</button>
+    </div>
+
+    <!-- 🚀 지원하기 레이어 팝업(모달) 창 -->
+    <div id="applyModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>🚀 인터랙트 지원하기</h2>
+            <form id="applyForm">
+                <div class="form-group">
+                    <label for="studentId">학번</label>
+                    <input type="text" id="studentId" placeholder="예: 10101" required>
+                </div>
+                <div class="form-group">
+                    <label for="studentName">이름</label>
+                    <input type="text" id="studentName" placeholder="홍길동" required>
+                </div>
+                <div class="form-group">
+                    <label for="motive">지원 동기</label>
+                    <textarea id="motive" rows="4" placeholder="인터랙트 동아리에 지원하게 된 계기를 자유롭게 적어주세요." required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">제출하기</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- JavaScript 파일 연결 -->
+    <script src="script.js" defer></script>
+</body>
+</html>
